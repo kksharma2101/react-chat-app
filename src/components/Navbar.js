@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { SignInButton, SignOutButton, UserButton } from "@clerk/nextjs";
+import { SignInButton, UserButton } from "@clerk/nextjs";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -22,47 +22,32 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-4">
+          <div className="hidden md:flex items-center space-x-4">
             <Link
               href="/"
-              className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium"
+              className="hover:bg-blue-700 px-3 py-2 rounded-md text-base font-medium"
             >
               Home
             </Link>
             <Link
-              href="/about"
-              className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium"
+              href="/forums"
+              className="hover:bg-blue-700 px-3 py-2 rounded-md text-base font-medium"
             >
-              About
+              Forums
             </Link>
             <Link
-              href="/services"
-              className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium"
+              href="/chat"
+              className="hover:bg-blue-700 px-3 py-2 rounded-md text-base font-medium"
             >
-              Services
+              User chat
             </Link>
-            <Link
-              href="/contact"
-              className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium"
-            >
-              Contact
-            </Link>
+
             <Link
               href="/"
-              className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium"
+              className="hover:bg-blue-700 p-1 rounded-full flex justify-center text-base font-medium"
             >
-              <SignInButton>
-                <UserButton />
-              </SignInButton>
+              <UserButton />
             </Link>
-            {/* <Link
-              href="/"
-              className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium"
-            >
-              <SignOutButton>
-                <SignInButton />
-              </SignOutButton>
-            </Link> */}
           </div>
 
           {/* Mobile Menu Button */}
